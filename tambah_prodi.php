@@ -14,6 +14,7 @@ if (isset($_POST['simpan'])) {
     } else {
         mysqli_query($koneksi, "INSERT INTO prodi VALUES(NULL,
         '$kd_prodi','$nama_prodi')");
+        $_SESSION['status'] = "Data berhasil ditambahkan!!";
         header("location: prodi.php");
         exit();
     }

@@ -24,6 +24,20 @@ $data = mysqli_query($koneksi, "SELECT * FROM prodi");
     <div id="main">
         <div class="container">
             <h2>Data Prodi</h2>
+            <div class="">
+            <?php
+            if(isset($_SESSION['status'])) {
+                echo $_SESSION['status'];
+                unset $_SESSION['status'];
+            } else if(isset($_SESSION['hapus'])) {
+                echo $_SESSION['hapus'];
+                unset $_SESSION['hapus'];
+            } else if(isset($_SESSION['edit'])) {
+                echo $_SESSION['edit'];
+                unset $_SESSION['edit'];
+                }
+            ?>
+            </div>
             <hr>
             <a href="tambah_prodi.php" class="tambah">TAMBAH DATA PRODI</a>
             <br><br>

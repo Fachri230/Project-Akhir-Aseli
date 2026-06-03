@@ -13,6 +13,7 @@ if(mysqli_num_rows($cek) > 0) {
     header("location: prodi.php?p=Data tidak bisa dihapus karena masih digunakan!");
 } else {
     mysqli_query($koneksi, "DELETE FROM prodi WHERE id_prodi='$id_prodi'");
+    $_SESSION['hapus'] = "Data berhasil dihapus!!";
     header("location: prodi.php");
 }
 exit();
