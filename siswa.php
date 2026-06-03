@@ -8,7 +8,7 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] != true) {
 include "koneksi.php";
 
 //ambil data siswa + prodi (JOIN)
-$data = mysqli_query($koneksi, "SELECT s.*, p.nama_prodi FROM siswa s JOIN prodi ON s.kd_prodi = p.kd_prodi");
+$data = mysqli_query($koneksi, "SELECT s.*, p.nama_prodi FROM siswa s JOIN prodi p ON s.kd_prodi = p.kd_prodi");
 ?>
 
 <!DOCTYPE html>
@@ -21,12 +21,17 @@ $data = mysqli_query($koneksi, "SELECT s.*, p.nama_prodi FROM siswa s JOIN prodi
     <script src="./script/script.js"></script>
 </head>
 <body>
-    <?php include "koneksi.php";?>
+    <?php include "koneksi.php";
+    include "navigasi.php"; ?>
     <div id="main">
         <div class="container">
             <h2>Data Siswa</h2>
             <hr>
             <a href="tambah_siswa.php" class="tambah">TAMBAH DATA</a>
+            <div>
+                
+            </div>
+            <br><br>
             <table>
                 <tr>
                     <th>NIS</th>
@@ -42,8 +47,8 @@ $data = mysqli_query($koneksi, "SELECT s.*, p.nama_prodi FROM siswa s JOIN prodi
                     <td><?php echo $row['tahun_ajaran']; ?></td>
                     <td><?php echo $row['nama_prodi']; ?></td>
                     <td>
-                        <a href="edit_siswa.php?id=<?php echo $row['id']; ?>">EDIT</a>
-                        <a href="hapus_siswa.php?id=<?php echo $row['id']; ?>" onclic="return confirm('Yakin ingin hapus?')">DELETE</a>
+                        <a href="edit_siswa.php?id=<?php echo $row['id']; ?>" class="edit">EDIT</a>
+                        <a href="hapus_siswa.php?id=<?php echo $row['id']; ?>"class="hapus" onclick="return confirm('Yakin ingin hapus?')">DELETE</a>
                     </td>
                 </tr>
                 <?php } ?>

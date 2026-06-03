@@ -53,7 +53,7 @@ body {
     left: 0;
     background-color: #163d5c;
     overflow-x: hidden;
-    transition: 0,3s;
+    transition: 0,2s;
     padding-top: 60px;
 }
 
@@ -108,7 +108,18 @@ hr {
     background-color: #1F4E79;
     color: white;
     border: none;
+    border-radius: 15px;
     font-size: 16px;
+    cursor: pointer;
+}
+.batal {
+    width: 100%;
+    padding: 10px;
+    background-color: #FF0000;
+    color: white;
+    margin-top: 10px;
+    border: none;
+    font-size: 10px;
     cursor: pointer;
 }
 
@@ -119,8 +130,37 @@ hr {
 .tambah {
     background-color: #4CAF50;
     border: none;
+    border-radius: 15px;
     color: white;
     padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.edit {
+    background-color: #FFA500;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.hapus {
+    background-color: #8B0000;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.login {
+    background-color: #4169E1;
+    border: none;
+    border-radius: 15px;
+    margin-top: 5%;
+    color: white;
+    padding: 10px 30px;
     font-size: 14px;
     cursor: pointer;
 }

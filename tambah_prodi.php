@@ -20,7 +20,9 @@ if (isset($_POST['simpan'])) {
     }
 }
 ?>
-<form method="POST">
+
+<link rel="stylesheet" href="./style/style.css">
+<form class="container" method="POST">
     <label>Kode Prodi</label>
     <input type="text" name="kd_prodi" required><br><br>
     <label>Nama Prodi</label>

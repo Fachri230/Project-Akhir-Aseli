@@ -1,11 +1,11 @@
 <?php
 
-$host = "localhost"
-$password = "root"
-$username = ""
-$database = 
+$host = "localhost";
+$username = "root";
+$password = "";
+$database = "proyek_penilaian";
 
-$koneksi = mysqli_connect($host, $password, $username, $database);
+$koneksi = mysqli_connect($host, $username, $password, $database);
 
 if($koneksi) {
     //memilih database
@@ -14,6 +14,6 @@ if($koneksi) {
         //echo "Database terpilih";
     }
 } else {
-    echo "koneksi gagal, periksa lagi"
+    echo "koneksi gagal, periksa lagi" . mysqli_error();
 }
 ?>

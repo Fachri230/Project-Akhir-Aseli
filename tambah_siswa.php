@@ -12,18 +12,19 @@ if(isset($_POST['simpan'])) {
     $kd_prodi = $_POST['kd_prodi'];
     $jk = $_POST['jenis_kelamin'];
 
-    if(empty(nis) || empty(nama)) {
+    if(empty($nis) || empty($nama)) {
         $error = "Data wajib diisi!!";
     } else {
         mysqli_query($koneksi, "INSERT INTO siswa
         (nis,nama,kelas,tahun_ajaran,kd_prodi,jenis_kelamin)
-        VALUES ('$nis', '$nama','$tahun_ajaran','$kd_prodi','$jk)");
+        VALUES ('$nis', '$nama','$kelas','$tahun_ajaran','$kd_prodi','$jk')");
         header("location: siswa.php");
         exit();
     }
 }
 ?>
-
+<link rel="stylesheet" href="./style/style.css">
+<form class="container" method="POST">
 <form method="POST">
     <table>
         <tr>
@@ -36,11 +37,11 @@ if(isset($_POST['simpan'])) {
         </tr>
         <tr>
             <td>Kelas</td>
-            <td><input type="text" name="kelas"></td>
+            <td><input type="text" name="kelas" required></td>
         </tr>
         <tr>
             <td>Tahun Ajaran</td>
-            <td><input type="text" name="tahun_ajaran"></td>
+            <td><input type="text" name="tahun_ajaran" required></td>
         </tr>
         <tr>
             <td>Prodi</td>

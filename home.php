@@ -11,8 +11,8 @@ if(!isset($_SESSION['login']) || $_SESSION['login'] != true) {
 <html lang="en">
 <head>
     <title>HOME WEB</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="sript.js"></script>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="./script/sript.js"></script>
 </head>
 <body>
     <?php include "navigasi.php"; ?>

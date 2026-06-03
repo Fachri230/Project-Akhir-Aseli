@@ -16,25 +16,26 @@ $data = mysqli_query($koneksi, "SELECT * FROM prodi");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Prodi</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="./script/script.js"></script>
 </head>
 <body>
-    <?php include "koneksi.php"; ?>
+    <?php include "koneksi.php";
+    include "navigasi.php"; ?>
     <div id="main">
         <div class="container">
             <h2>Data Prodi</h2>
             <div class="">
             <?php
             if(isset($_SESSION['status'])) {
-                echo $_SESSION['status'];
-                unset $_SESSION['status'];
+                echo ($_SESSION['status']);
+                unset ($_SESSION['status']);
             } else if(isset($_SESSION['hapus'])) {
-                echo $_SESSION['hapus'];
-                unset $_SESSION['hapus'];
+                echo ($_SESSION['hapus']);
+                unset ($_SESSION['hapus']);
             } else if(isset($_SESSION['edit'])) {
-                echo $_SESSION['edit'];
-                unset $_SESSION['edit'];
+                echo ($_SESSION['edit']);
+                unset ($_SESSION['edit']);
                 }
             ?>
             </div>
@@ -52,11 +53,8 @@ $data = mysqli_query($koneksi, "SELECT * FROM prodi");
                         <td><?php echo $row['kd_prodi']; ?></td>
                         <td><?php echo $row['nama_prodi']; ?></td>
                         <td>
-                            <a href="edit_prodi.php?id_prodi=<?php echo
-$row['id_prodi']; ?>">EDIT</a>
-                            <a href="hapus_prodi.php?id_prodi=<?php echo
-$row['id_prodi'];?>"
-                                onclick="return confirm('yakin ingin hapus?')">DELETE</a>
+                            <a href="edit_prodi.php?id_prodi=<?php echo $row['id_prodi']; ?>" class="edit">EDIT</a>
+                            <a href="hapus_prodi.php?id_prodi=<?php echo $row['id_prodi'];?>" class="hapus" onclick="return confirm('yakin ingin hapus?')">DELETE</a>
                         </td>
                     </tr>
                     <?php } ?>

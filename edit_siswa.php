@@ -3,7 +3,7 @@ session_start();
 include "koneksi.php";
 
 //cek LOGIN
-if (!isset($_SESSION[login])) {
+if (!isset($_SESSION['login'])) {
    header("location: index.php");
    exit(); 
 }
@@ -20,12 +20,12 @@ if (isset($_POST['update'])) {
     $kd_prodi = $_POST['kd_prodi'];
     $jk = $_POST['jenis_kelamin'];
     mysqli_query($koneksi, "UPDATE siswa SET
-    nis = '$nis'
-    nama = '$nama'
-    kelas = '$kelas'
-    tahun_ajaran = '$tahun_ajaran'
-    kd_prodi = '$kd_prodi'
-    jk = '$jk'
+    nis = '$nis',
+    nama = '$nama',
+    kelas = '$kelas',
+    tahun_ajaran = '$tahun_ajaran',
+    kd_prodi = '$kd_prodi',
+    jenis_kelamin = '$jk'
     WHERE id='$id'");
 header("location: siswa.php");
 exit();
