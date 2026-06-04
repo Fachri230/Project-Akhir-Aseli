@@ -40,7 +40,7 @@ $data = mysqli_query($koneksi, "SELECT * FROM prodi");
             ?>
             </div>
             <hr>
-            <a href="tambah_siswa.php" class="tambah">TAMBAH DATA</a>
+            <a href="tambah_prodi.php" class="tambah"> + TAMBAH DATA</a>
             <div class="search">
                 <input type="text" name="search-prod" placeholder="Cari prodi" class="src">
                 <button type="submit" class="btn-src">Cari</button>

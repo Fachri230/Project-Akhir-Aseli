@@ -25,13 +25,13 @@ if(!isset($_SESSION['login']) || $_SESSION['login'] != true) {
         date_default_timezone_set("asia/jakarta");
         $jam = date("H");
 
-        if($jam >= 3 && $jam <= 9) {
+        if($jam >= 3 && $jam < 9) {
             $sapa = "Selamat Pagi";
-        } else if($jam >= 9 && $jam <= 2) {
+        } else if($jam >= 9 && $jam < 14) {
             $sapa = "Selamat Siang";
-        } else if($jam >=3 && $jam <= 7){
+        } else if($jam >=14 && $jam < 19){
             $sapa = "Selamat Sore";
-        }else {
+        }else { 
             $sapa = "Selamat Malam";
         }
         

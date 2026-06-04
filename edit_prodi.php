@@ -18,11 +18,15 @@ if(isset($_POST['update'])) {
 ?>
 
 <!-- Form dengan value terisi data lama -->
- <form method="POST">
-    <label>Kode Prodi</label>
-    <input type="text" name="kd_prodi" value="<?php echo $data['kd_prodi'];?>" required>
-    <label>Nama Prodi</label>
-    <input type="text" name="nama_prodi" value="<?php echo $data['nama_prodi'];?>" required>
-    <button type="submit" name="update" class="submit">UPDATE</button>
-    <a href="prodi.php" class="batal">BATAL</a>
- </form>
+<link rel="stylesheet" href="./style/style.css">
+<div class="container">
+    <form method="POST">
+        <label>Kode Prodi</label><br>
+        <input type="text" name="kd_prodi" value="<?php echo $data['kd_prodi'];?>" required><br><br>
+        <label>Nama Prodi</label><br>
+        <input type="text" name="nama_prodi" value="<?php echo $data['nama_prodi'];?>" required>
+        <br><br>
+        <button type="submit" name="update" class="submit">UPDATE</button>
+        <button class="batal"><a href="prodi.php" style="color: white;">BATAL</a>
+    </form>
+</div>
