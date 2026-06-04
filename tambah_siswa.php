@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="./style/style.css">
 <?php
 session_start();
 include "koneksi.php";
@@ -18,12 +19,14 @@ if (isset($_POST['simpan'])) {
     $path = "uploads/" . $nama_foto;
 
     if (empty($nis) || empty($nama) || empty($kelas) || empty($tahun_ajaran) || empty($kd_prodi) || empty($jk) || empty($foto)) {
-        $error = "Data wajib diisi!";
+        echo $error = "Data wajib diisi!";
     } else {
         if(move_uploaded_file($tmp, $path)){
             mysqli_query($koneksi, "INSERT INTO siswa (nis, nama, kelas, tahun_ajaran, kd_prodi, jenis_kelamin, foto) VALUES ('$nis', '$nama', '$kelas', '$tahun_ajaran', '$kd_prodi', '$jk', '$nama_foto')");
+            echo "<div class='container'>";
             echo "<h1>Data berhasil disimpan!</h1>";
-            echo "<a href='siswa.php' class='batal'>Kembali</a>";
+            echo "<a href='siswa.php' class='submit'>Kembali</a>";
+            echo "</div>";
             exit();
         }
     }
@@ -32,7 +35,6 @@ if (isset($_POST['simpan'])) {
 <html>
 <head>
     <title>Tambah Data Siswa</title>
-    <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
     <div class="container">
