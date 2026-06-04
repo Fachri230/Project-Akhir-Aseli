@@ -21,6 +21,28 @@ if(!isset($_SESSION['login']) || $_SESSION['login'] != true) {
         <h2> APLIKASI MANAGEMEN SISWA</h2>
         <hr>
         <p>Selamat datang di aplikasi data siswa SMK PGRI 3 MALANG</p>
+        <?php
+        date_default_timezone_set("asia/jakarta");
+        $jam = date("H");
+
+        if($jam >= 3 && $jam <= 9) {
+            $sapa = "Selamat Pagi";
+        } else if($jam >= 9 && $jam <= 2) {
+            $sapa = "Selamat Siang";
+        } else if($jam >=3 && $jam <= 7){
+            $sapa = "Selamat Sore";
+        }else {
+            $sapa = "Selamat Malam";
+        }
+        
+        ?>
+        <div class="sapa">
+
+            <?php echo date('l,d,m,y'); ?><br>
+            <?php echo $sapa; ?>
+
+        </div>
+
 </div>
 </body>
 </html>

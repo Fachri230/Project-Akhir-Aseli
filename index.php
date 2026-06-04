@@ -21,7 +21,7 @@ $_SESSION['login'] = false;
         <input type="text" name="user" placeholder="Masukkan username">
     </div>
     <div class="form-control">
-        <input type="text" name="pass" placeholder="Masukkan password">
+        <input type="password" name="pass" placeholder="Masukkan password">
     </div>
     <div class="form-control">
         <button type="submit" class="login">LOGIN</button>

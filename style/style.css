@@ -119,6 +119,7 @@ hr {
     color: white;
     margin-top: 10px;
     border: none;
+    border-radius: 15%;
     font-size: 10px;
     cursor: pointer;
 }
@@ -164,6 +165,11 @@ hr {
     font-size: 14px;
     cursor: pointer;
 }
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: white;
+}
 
 th {
     background-color: #1F4E79;
@@ -173,4 +179,31 @@ th {
 th, td {
     padding: 10px;
     border-bottom: 1px solid#ddd;
+}
+
+.sapa {
+    text-align: center;
+    font-size: 25px;
+    
+}
+
+.search {
+text-align: end;
+margin-bottom: 0px;
+}
+
+.src {
+    border-color: #1F4E79;
+}
+
+.btn-src {
+    width: 15%;
+    background-color: #1F4E79;
+    color: white;
+    border-radius: 5px;
+
+}
+
+table {
+    text-align: center;
 }

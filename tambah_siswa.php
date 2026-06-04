@@ -18,6 +18,7 @@ if(isset($_POST['simpan'])) {
         mysqli_query($koneksi, "INSERT INTO siswa
         (nis,nama,kelas,tahun_ajaran,kd_prodi,jenis_kelamin)
         VALUES ('$nis', '$nama','$kelas','$tahun_ajaran','$kd_prodi','$jk')");
+        $_SESSION['Tambah'] = "Data  berhasil ditambahkan!!";
         header("location: siswa.php");
         exit();
     }
