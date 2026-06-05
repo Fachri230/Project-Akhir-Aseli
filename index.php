@@ -14,7 +14,7 @@ $_SESSION['login'] = false;
 
 <body>
 <div class="container">
-<h1>PANEL LOGIN</h1>
+<h1 class="form-control">PANEL LOGIN</h1>
 <hr>
 <form action="cek_login.php" method="POST">
     <div class="form-control">
