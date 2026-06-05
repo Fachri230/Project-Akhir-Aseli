@@ -52,7 +52,7 @@ if($cari != '') {
                 <form method="GET" action="">
                 <input type="text" name="cari" value="<?php echo $cari; ?>" placeholder="Cari prodi" class="src">
                 <button type="submit" class="btn-src">Cari</button>
-                <?php if($cari != '') echo '<button class="btn-res"><a href="siswa.php" style="color: black;">Reset</a></button>'; ?>
+                <?php if($cari != '') echo '<button class="btn-res"><a href="prodi.php" style="color: black;">Reset</a></button>'; ?>
                 </form>
             </div><br>
             <table>

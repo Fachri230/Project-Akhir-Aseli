@@ -32,7 +32,7 @@ if (isset($_POST['update'])) {
     }
     echo "<div class='container'>";
     echo "<h1>Data berhasil diupdate!</h1>";
-    echo "<a href='siswa.php' class='batal'>Kembali</a>";
+    echo "<a href='siswa.php' class='submit'>Kembali</a>";
     echo "<div>";
     exit();
 }
