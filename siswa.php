@@ -33,17 +33,11 @@ if($cari != '') {
     <div id="main">
         <div class="container">
             <h2>Data Siswa</h2>
-            <div class="">
+            <div class="berhasil" style="">
                 <?php
-                if(isset($_SESSION['tambah'])) {
-                    echo ($_SESSION['tambah']);
-                    unset ($_SESSION['tambah']);
-                } else if(isset($_SESSION['ubah'])){
-                    echo ($_SESSION['ubah']);
-                    unset ($_SESSION['ubah']);
-                } else if(isset($_SESSION['delete'])){
-                    echo ($_SESSION['delete']);
-                    unset ($_SESSION['delete']);
+                 if(isset($_SESSION['ilang'])){
+                    echo ($_SESSION['ilang']);
+                    unset ($_SESSION['ilang']);
                 }
                 ?>
             </div>
@@ -54,7 +48,6 @@ if($cari != '') {
                   <input type="text" name="cari" placeholder="Cari NIS atau Nama..." value="<?php echo $cari; ?>" class="src">
                     <button type="submit" class="btn-src">Cari</button>
                     <?php if($cari != '') echo '<button class="btn-res"><a href="siswa.php" style="color: black;">Reset</a></button>'; ?>
-                </form>
                 </form>
             </div><br>
 

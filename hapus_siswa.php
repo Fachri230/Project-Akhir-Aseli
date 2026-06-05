@@ -17,6 +17,7 @@ if(!$data) {
 //proses hapus
 $hapus = mysqli_query($koneksi, "DELETE FROM siswa WHERE id='$id'");
 if($hapus) {
+    $_SESSION['ilang'] = "Data berhasil dihapus!!";
     header("location: siswa.php?p=Data berhasil dihapus!");
     exit();
 } else {

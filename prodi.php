@@ -7,7 +7,14 @@ if(!isset($_SESSION['login']) || $_SESSION['login'] != true) {
 
 }
 include "koneksi.php";
-$data = mysqli_query($koneksi, "SELECT * FROM prodi");
+
+$cari = isset($_GET['cari']) ? $_GET['cari'] : '';
+if($cari != '') {
+    $data = mysqli_query($koneksi, "SELECT * FROM prodi WHERE nama_prodi LIKE '%$cari%' OR kd_prodi LIKE '%$cari%'");
+} else {
+    $data = mysqli_query($koneksi, "SELECT * FROM prodi");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +32,7 @@ $data = mysqli_query($koneksi, "SELECT * FROM prodi");
     <div id="main">
         <div class="container">
             <h2>Data Prodi</h2>
-            <div class="">
+            <div class="berhasil">
             <?php
             if(isset($_SESSION['status'])) {
                 echo ($_SESSION['status']);
@@ -42,8 +49,11 @@ $data = mysqli_query($koneksi, "SELECT * FROM prodi");
             <hr>
             <a href="tambah_prodi.php" class="tambah"> + TAMBAH DATA</a>
             <div class="search">
-                <input type="text" name="search-prod" placeholder="Cari prodi" class="src">
+                <form method="GET" action="">
+                <input type="text" name="cari" value="<?php echo $cari; ?>" placeholder="Cari prodi" class="src">
                 <button type="submit" class="btn-src">Cari</button>
+                <?php if($cari != '') echo '<button class="btn-res"><a href="siswa.php" style="color: black;">Reset</a></button>'; ?>
+                </form>
             </div><br>
             <table>
                 <tr>

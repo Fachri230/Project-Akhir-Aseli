@@ -17,6 +17,7 @@ body {
     text-decoration: none;
     font-size: 20px;
     font-weight: bold;
+    transition: 0.2s;
 }
 
 .navbar-nav {
@@ -227,4 +228,16 @@ table {
 
 .profile {
     clip-path: circle();
+}
+
+.berhasil {
+    width: 25%;
+    background-color: rgba(145, 255, 90, 0.485);
+    color: green;
+    border-color: green;
+    border-width: 5px;
+    border-radius: 10px;
+    font-family: sans-serif;
+    text-align: center;
+
 }

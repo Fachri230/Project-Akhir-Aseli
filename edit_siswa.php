@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="./style/style.css">
 <?php
 session_start();
 include "koneksi.php";
@@ -29,9 +30,10 @@ if (isset($_POST['update'])) {
     } else {
         mysqli_query($koneksi, "UPDATE siswa SET nis='$nis', nama='$nama', kelas='$kelas', tahun_ajaran='$tahun_ajaran', kd_prodi='$kd_prodi', jenis_kelamin='$jk' WHERE id='$id'");
     }
-
+    echo "<div class='container'>";
     echo "<h1>Data berhasil diupdate!</h1>";
     echo "<a href='siswa.php' class='batal'>Kembali</a>";
+    echo "<div>";
     exit();
 }
 ?>
@@ -39,7 +41,6 @@ if (isset($_POST['update'])) {
 <html>
 <head>
     <title>Edit Data Siswa</title>
-    <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
     <?php include "navigasi.php"; ?>
